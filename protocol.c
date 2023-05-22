@@ -2,12 +2,15 @@
  @file  protocol.c
  @brief ENet protocol functions
 */
-#include <stdio.h>
 #include <string.h>
 #define ENET_BUILDING_LIB 1
 #include "enet/utility.h"
 #include "enet/time.h"
 #include "enet/enet.h"
+
+#ifdef __vita__
+#define perror sceClibPrintf
+#endif
 
 static const size_t commandSizes [ENET_PROTOCOL_COMMAND_COUNT] =
 {
