@@ -121,6 +121,10 @@ SOURCE=.\unix.c
 # End Source File
 # Begin Source File
 
+SOURCE=.\vita.c
+# End Source File
+# Begin Source File
+
 SOURCE=.\win32.c
 # End Source File
 # End Group
@@ -158,6 +162,10 @@ SOURCE=.\include\enet\unix.h
 # Begin Source File
 
 SOURCE=.\include\enet\utility.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\include\enet\vita.h
 # End Source File
 # Begin Source File
 

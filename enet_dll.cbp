@@ -59,6 +59,7 @@
 		<Unit filename="include\enet\unix.h" />
 		<Unit filename="include\enet\utility.h" />
 		<Unit filename="include\enet\win32.h" />
+		<Unit filename="include\enet\vita.h" />
 		<Unit filename="list.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -77,6 +78,9 @@
 		<Unit filename="win32.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="vita.c">
+            <Option compilerVar="CC" />
+        </Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />
