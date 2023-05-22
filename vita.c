@@ -37,7 +37,6 @@ typedef int socklen_t;
 #define SOCK_DGRAM SCE_NET_SOCK_DGRAM
 #define INADDR_ANY SCE_NET_INADDR_ANY
 #define SO_ERROR SCE_NET_SO_ERROR
-#define MSG_TRUNC 0x20 /* Unix socket.h MSG_TRUNC */
 
 #define recvmsg sceNetRecvmsg
 #define sendmsg sceNetSendmsg

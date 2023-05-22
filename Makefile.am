@@ -11,7 +11,7 @@ enetinclude_HEADERS = \
 	include/enet/types.h \
 	include/enet/unix.h \
 	include/enet/utility.h \
-	include/enet/win32.h
+	include/enet/win32.h \
 	include/enet/vita.h
 
 lib_LTLIBRARIES = libenet.la

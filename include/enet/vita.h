@@ -1,3 +1,7 @@
+/**
+ @file  vita.h
+ @brief ENet Vita header (courtesy of https://github.com/xyzz/vita-enet)
+*/
 #ifndef __VITA_ENET_H__
 #define __VITA_ENET_H__
 
@@ -10,9 +14,13 @@
 #define ENET_BUFFER_MAXIMUM 10
 #endif
 
+#ifndef MSG_TRUNC
+#define MSG_TRUNC 0x20 /* Unix socket.h MSG_TRUNC */
+#endif
+
 typedef int ENetSocket;
 
-#define ENET_SOCKET_NULL -1
+#define ENET_SOCKET_NULL (-1)
 
 #define ENET_HOST_TO_NET_16(value) (__builtin_bswap16 (value)) /**< macro that converts host to net byte-order of a 16-bit value */
 #define ENET_HOST_TO_NET_32(value) (__builtin_bswap32 (value)) /**< macro that converts host to net byte-order of a 32-bit value */
