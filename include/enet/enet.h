@@ -12,8 +12,10 @@ extern "C"
 
 #include <stdlib.h>
 
-#ifdef _WIN32
+#if defined(_WIN32)
 #include "enet/win32.h"
+#elif defined(__vita__)
+#include "enet/vita.h"
 #else
 #include "enet/unix.h"
 #endif
