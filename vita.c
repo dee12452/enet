@@ -1,4 +1,5 @@
 #include <psp2/net/net.h>
+#include <psp2/net/netctl.h>
 #include <psp2/kernel/threadmgr.h>
 
 #include <sys/types.h>
@@ -58,12 +59,34 @@ static enet_uint32 timeBase = 0;
 int
 enet_initialize (void)
 {
+    if(sceSysmoduleIsLoaded(SCE_SYSMODULE_NET) < 0) {
+        sceSysmoduleLoadModule(SCE_SYSMODULE_NET);
+    }
+    SceNetInitParam netInitParam;
+    const int size = 1*1024*1024;
+    netInitParam.memory = malloc(size);
+    netInitParam.size = size;
+    netInitParam.flags = 0;
+    const int netInit = sceNetInit(&netInitParam);
+    if(netInit < 0) {
+        return netInit;
+    }
+    const int netCtlInit = sceNetCtlInit();
+    if(netCtlInit < 0) {
+        return netCtlInit;
+    }
+
     return 0;
 }
 
 void
 enet_deinitialize (void)
 {
+    sceNetCtlTerm();
+    sceNetTerm();
+    if(sceSysmoduleIsLoaded(SCE_SYSMODULE_NET) == 0) {
+        sceSysmoduleUnloadModule(SCE_SYSMODULE_NET);
+    }
 }
 
 enet_uint32
