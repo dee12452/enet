@@ -1,3 +1,4 @@
+#include <psp2/sysmodule.h>
 #include <psp2/net/net.h>
 #include <psp2/net/netctl.h>
 #include <psp2/kernel/threadmgr.h>
