@@ -6,7 +6,7 @@ Vita net code copied from https://github.com/xyzz/vita-enet
 ## Vita Enet install instructions
 
 Located inside the build/ folder is a VITABUILD to install this package.
-You *must* have the VITASDK installed as a prerequisite.
+You *must* have the VITASDK / toolchain installed as a prerequisite.
 
 ```
 $ cd build
