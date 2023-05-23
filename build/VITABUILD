@@ -1,0 +1,19 @@
+pkgname=enet
+pkgver=1.0.0
+pkgrel=1
+url="https://github.com/dee12452/enet-vita"
+gitrev=$(git log -n 1 --format=%H)
+source=("https://github.com/dee12452/enet-vita/archive/${gitrev}.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+  cd "enet-vita-${gitrev}"
+  autoreconf -vfi
+  ./configure --host=arm-vita-eabi --prefix=$prefix --disable-shared --enable-static --without-pic
+  make -j$(nproc)
+}
+
+package () {
+  cd "enet-vita-${gitrev}"
+  make DESTDIR=$pkgdir install
+}
